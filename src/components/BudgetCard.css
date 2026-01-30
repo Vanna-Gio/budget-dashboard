@@ -72,13 +72,40 @@
   color: var(--color-danger);
 }
 
-/* Responsive Design - Mobile */
+/* Responsive Design - Tablet */
+@media (max-width: 968px) {
+  .budget-card {
+    padding: 18px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .budget-card {
     max-width: 100%;
+    padding: 16px;
   }
   
   .amount {
     font-size: 28px;
+  }
+  
+  .icon {
+    font-size: 20px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 375px) {
+  .amount {
+    font-size: 24px;
+  }
+  
+  .title {
+    font-size: 13px;
+  }
+  
+  .growth {
+    font-size: 11px;
   }
 }

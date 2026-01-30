@@ -7,6 +7,7 @@
 h1 {
   color: #111827;
   margin-bottom: 24px;
+  font-size: 32px;
 }
 
 .card-grid {
@@ -14,15 +15,39 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
   gap: 24px;
   max-width: 1200px;
+  margin: 0 auto;
+}
+/* Tablet */
+@media (max-width: 968px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
 }
 
 /* Mobile responsive */
 @media (max-width: 768px) {
+
   .App {
     padding: 20px 16px;
+  }
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
   }
   
   .card-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/*  Small mobile  */
+@media (max-width: 375px) {
+  .App {
+    padding: 16px 12px;
+  }
+  h1 {
+    font-size: 20px;
   }
 }
