@@ -1,9 +1,28 @@
 .App {
   min-height: 100vh;
   background: #F3F4F6;
-  padding: 40px;
+  padding: 40px 20px;
 }
+
 h1 {
   color: #111827;
   margin-bottom: 24px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  gap: 24px;
+  max-width: 1200px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px 16px;
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
 }

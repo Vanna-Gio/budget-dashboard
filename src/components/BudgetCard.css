@@ -1,34 +1,74 @@
+/* Design Tokens - extracted from Figma */
+:root {
+  --card-radius: 12px;
+  --card-padding: 20px;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-success: #10B981;
+  --color-danger: #EF4444;
+  --color-bg-card: #FFFFFF;
+  
+  --spacing-xs: 12px;
+  --spacing-sm: 16px;
+  --spacing-md: 20px;
+}
 
 .budget-card {
-    width: 320px;
-    height: 200px;
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: var(--color-bg-card);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  box-shadow: var(--card-shadow);
+  
+  /* Responsive: flexible width instead of fixed */
+  max-width: 320px;
+  width: 100%;
+}
 
-}
 .card-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
 }
+
 .icon {
-    font-size: 24px;
+  font-size: 24px;
 }
+
 .title {
-    font-size: 14px;
-    color:#6B7280;
-    font-weight: 500;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
 }
-.amount{
-    font-size: 32px;
-    font-weight: bold;
-    color: #111827;
-    margin-bottom: 16px;
+
+.amount {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
 }
+
 .growth {
-    font-size: 12px;
-    color: #10B981;
+  font-size: 12px;
+}
+
+.growth.positive {
+  color: var(--color-success);
+}
+
+.growth.negative {
+  color: var(--color-danger);
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  .budget-card {
+    max-width: 100%;
+  }
+  
+  .amount {
+    font-size: 28px;
+  }
 }

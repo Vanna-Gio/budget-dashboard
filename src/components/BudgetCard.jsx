@@ -1,13 +1,15 @@
-function BudgetCard() {
+function BudgetCard({ icon, title, amount, growth, growthPositive = true }) {
     return (
         <div className="budget-card">
             <div className="card-header">
-                <span className="icon">💰</span>
-                <span className="title">Total Budget</span>
+                <span className="icon">{icon}</span>
+                <span className="title">{title}</span>
 
             </div>
-            <div className="amount">$2,450,000</div>
-             <div className="growth">+12.5% from last quarter</div>
+            <div className="amount">{amount}</div>
+             <div className={`growth ${growthPositive ? 'positive' : 'negative'}`}>
+                {growth}
+            </div>
         </div>
     );
 }
