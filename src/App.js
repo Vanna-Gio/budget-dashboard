@@ -11,10 +11,7 @@ function App() {
         {budgetStats.map((stat) =>(
             <BudgetCard
               key={stat.id}
-              icon={stat.icon}
-              title={stat.title}
-              amount={stat.growth}
-              growthPositive={stat.growthPositive}
+              {...stat}
           />
         ))}
         
