@@ -12,7 +12,7 @@ export const budgetStats = [
     id: 2,
     icon: "📊",
     title: "Active Projects",
-    amount: "47",
+    amount: "48",
     growth: "-3 from last month",
     growthPositive: false
   },
@@ -20,7 +20,7 @@ export const budgetStats = [
     id: 3,
     icon: "✅",
     title: "Completed",
-    amount: "128",
+    amount: "120",
     growth: "+8 this quarter",
     growthPositive: true
   },
@@ -28,7 +28,7 @@ export const budgetStats = [
     id: 4,
     icon: "⏳",
     title: "Pending Approval",
-    amount: "12",
+    amount: "15",
     growth: "+4 new requests",
     growthPositive: true
   }
