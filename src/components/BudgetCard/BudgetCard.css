@@ -1,38 +1,28 @@
-/* Design Tokens - extracted from Figma */
-:root {
-  --card-radius: 12px;
-  --card-padding: 20px;
-  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  
-  --color-text-primary: #111827;
-  --color-text-secondary: #6B7280;
-  --color-success: #10B981;
-  --color-danger: #EF4444;
-  --color-bg-card: #FFFFFF;
-  
-  --spacing-xs: 12px;
-  --spacing-sm: 16px;
-  --spacing-md: 20px;
-  
-}
+/* BudgetCard - Uses global design tokens */
 
 .budget-card {
-  background: var(--color-bg-card);
-  border-radius: var(--card-radius);
-  padding: var(--card-padding);
-  box-shadow: var(--card-shadow);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all var(--transition-slow);
   
-  /* Responsive: flexible width instead of fixed */
+  /* Dynamic animation */
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+  animation-delay: calc(var(--index, 0) * 0.1s);
+  
+  /* Responsive width */
   max-width: 320px;
   width: 100%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  
 }
+
 .budget-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-lg);
 }
+
 .budget-card:active {
   transform: translateY(-2px);
 }
@@ -40,29 +30,29 @@
 .card-header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
-  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
 }
 
 .icon {
-  font-size: 24px;
+  font-size: var(--font-size-4xl);
 }
 
 .title {
-  font-size: 14px;
-  color: var(--color-text-secondary);
-  font-weight: 500;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-500);
+  font-weight: var(--font-weight-medium);
 }
 
 .amount {
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-md);
 }
 
 .growth {
-  font-size: 12px;
+  font-size: var(--font-size-sm);
 }
 
 .growth.positive {
@@ -73,59 +63,45 @@
   color: var(--color-danger);
 }
 
-/* Fade-in animation */
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
-  to{
+  to {
     opacity: 1;
     transform: translateY(0);
   }
-  
-}
-.budget-card{
-   animation: fadeIn 0.5s ease-out forwards;
-   /*  Use CSS variable for delay - scales infinitely */
-   animation-delay: calc(var(--index) * 0.1s);
 }
 
-
-
-
-
-/* Start invisible */
-.budget-card {
-  opacity: 0;
-}
-/* Responsive Design - Tablet */
+/* Responsive - Tablet */
 @media (max-width: 968px) {
   .budget-card {
     padding: 18px;
   }
 }
 
-/* Mobile */
+/* Responsive - Mobile */
 @media (max-width: 768px) {
   .budget-card {
     max-width: 100%;
-    padding: 16px;
+    padding: var(--spacing-md);
   }
   
   .amount {
-    font-size: 28px;
+    font-size: var(--font-size-3xl);
   }
   
   .icon {
-    font-size: 20px;
+    font-size: var(--font-size-xl);
   }
 }
 
-/* Small mobile */
+/* Responsive - Small Mobile */
 @media (max-width: 375px) {
   .amount {
-    font-size: 24px;
+    font-size: var(--font-size-2xl);
   }
   
   .title {
@@ -133,6 +109,6 @@
   }
   
   .growth {
-    font-size: 11px;
+    font-size: var(--font-size-xs);
   }
 }

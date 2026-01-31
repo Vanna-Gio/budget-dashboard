@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import './components/BudgetCard/BudgetCard.css'
-import BudgetCard from './components/BudgetCard/BudgetCard';
+import BudgetCard from './components/BudgetCard';
 import { budgetStats } from './data/mockData';
 import LoadingSpinner from './components/LoadingSpinner';
 import EmptyState from './components/EmptyState';
