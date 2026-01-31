@@ -71,10 +71,11 @@ function App() {
       {/* Cards Grid */}
       {!isLoading && filteredStats.length > 0 && (
         <div className='card-grid'>
-          {filteredStats.map((stat) => (
+          {filteredStats.map((stat, index) => (
             <BudgetCard 
               key={stat.id}
               {...stat}
+              index={index} // pass array index to component
               />
           ))}
         </div>

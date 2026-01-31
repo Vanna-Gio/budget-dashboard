@@ -13,6 +13,7 @@
   --spacing-xs: 12px;
   --spacing-sm: 16px;
   --spacing-md: 20px;
+  
 }
 
 .budget-card {
@@ -26,7 +27,6 @@
   width: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
-  animation: fadeIn 0.5s ease-out forwards;
   
 }
 .budget-card:hover {
@@ -85,14 +85,15 @@
   }
   
 }
+.budget-card{
+   animation: fadeIn 0.5s ease-out forwards;
+   /*  Use CSS variable for delay - scales infinitely */
+   animation-delay: calc(var(--index) * 0.1s);
+}
 
-/* Stagger animation for multiple cards */
-.budget-card:nth-child(1) { animation-delay: 0.1s;}
-.budget-card:nth-child(2) { animation-delay: 0.2s; }
-.budget-card:nth-child(3) { animation-delay: 0.3s; }
-.budget-card:nth-child(4) { animation-delay: 0.4s; }
-.budget-card:nth-child(5) { animation-delay: 0.5s; }
-.budget-card:nth-child(6) { animation-delay: 0.6s; }
+
+
+
 
 /* Start invisible */
 .budget-card {

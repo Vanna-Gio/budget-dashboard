@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-function BudgetCard({ id, icon, title, amount, growth, growthPositive = true }) {
+function BudgetCard({ id, icon, title, amount, growth, growthPositive, index}) {
     
     const handleCardClick= () => {
         console.log(`Card clicked: ${title} - ${amount}`);
@@ -8,7 +8,7 @@ function BudgetCard({ id, icon, title, amount, growth, growthPositive = true }) 
     
     
     return (
-        <div className="budget-card" onClick={handleCardClick}>
+        <div className="budget-card" onClick={handleCardClick} style={{ '--index' : index }}>
             <div className="card-header">
                 <span className="icon">{icon}</span>
                 <span className="title">{title}</span>
@@ -29,12 +29,14 @@ BudgetCard.prototype = {
     amount: PropTypes.string.isRequired,
     growth: PropTypes.string.isRequired,
     growthPositive: PropTypes.string.isRequired,
+    index: PropTypes.number // add index prop
 
 };
 
 // Default props - fallback values
 BudgetCard.defaultProps = {
-    growthPositive: true
+    growthPositive: true,
+    index: 0 //Default fallback
 }
 
 export default BudgetCard;
