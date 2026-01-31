@@ -1,3 +1,4 @@
+
 import PropTypes from "prop-types";
 function BudgetCard({ id, icon, title, amount, growth, growthPositive, index}) {
     
