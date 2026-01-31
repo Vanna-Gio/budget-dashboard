@@ -2,6 +2,8 @@
 
 A responsive React dashboard for visualizing public investment budget data, built as a demonstration of converting Figma designs into production-quality code.
 
+🔗 **[Live Demo](https://vanna-gio.github.io/budget-dashboard/)** | 📂 **[GitHub Repo](https://github.com/Vanna-Gio/budget-dashboard)**
+
 ![Budget Dashboard Preview](./screenshots/dashboard-preview.png)
 
 ## 🎯 Project Purpose
