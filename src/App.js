@@ -7,6 +7,8 @@ import { fetchBudgetStats, fetchWithRetry } from './services/budgetApi';
 import ErrorState from './components/ErrorState';
 import SortDropdown from './components/SortDropdown';
 import SearchBar from './components/SearchBar';
+import Modal from './components/Modal';
+import BudgetDetail from './components/BudgetDetail';
 
 function App() {
   const [filter, setFilter] = useState('all'); // State: 'all' , 'Positive',
@@ -15,6 +17,10 @@ function App() {
   const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('default');
+  const [selectedBudget, setSelectedBudget] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
 
   // Fetch data from API
   const loadBudgetData = async () => {
@@ -48,6 +54,19 @@ function App() {
   const handleSort = (sortOption) => {
     setSortBy(sortOption);
   }
+
+  const handleCardClick = (budgetData) => {
+    setSelectedBudget(budgetData);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => 
+      setSelectedBudget(null), 300); //wait for animation
+    
+  }
+
 
   // Filter, Search, and sort logic
   const getFilteredAndSortedStates = ()  =>{
@@ -156,10 +175,15 @@ function App() {
               key={stat.id}
               {...stat}
               index={index} // pass array index to component
+              onClick={handleCardClick}
               />
           ))}
         </div>
       )}
+      {/* Modal with Budget Detail */}
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+         {selectedBudget && <BudgetDetail data={selectedBudget} />}
+      </Modal>
       
     </div>
   );
