@@ -1,70 +1,169 @@
-# Getting Started with Create React App
+# 💰 Budget Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive React dashboard for visualizing public investment budget data, built as a demonstration of converting Figma designs into production-quality code.
 
-## Available Scripts
+![Budget Dashboard Preview](./screenshots/dashboard-preview.png)
 
-In the project directory, you can run:
+## 🎯 Project Purpose
 
-### `npm start`
+This project was created to demonstrate key frontend development skills required for the **General Department of Digital Economy** position, specifically:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Converting Figma designs into high-quality, pixel-perfect code
+- Building responsive interfaces that work across all devices
+- Implementing modern React patterns and best practices
+- Creating reusable, maintainable component architecture
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Features
 
-### `npm test`
+- **📊 Dynamic Data Visualization** - Budget statistics displayed in interactive cards
+- **🔍 Filter Functionality** - Toggle between all projects, growing, and declining budgets
+- **📱 Fully Responsive** - Optimized for mobile, tablet, and desktop (320px - 1920px+)
+- **⚡ Smooth Animations** - Professional fade-in effects with staggered delays
+- **🎨 Design System** - CSS variables for consistent theming
+- **♿ Accessible** - Semantic HTML and ARIA-friendly components
+- **🔄 Loading States** - Simulates real API data fetching
+- **📭 Empty States** - Handles edge cases gracefully
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Technologies Used
 
-### `npm run build`
+- **React 18** - UI library
+- **JavaScript (ES6+)** - Modern syntax with hooks
+- **CSS3** - Custom properties, animations, Grid, Flexbox
+- **PropTypes** - Runtime type checking
+- **Git** - Version control with conventional commits
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📱 Responsive Breakpoints
+```css
+Mobile:     320px - 768px
+Tablet:     768px - 968px
+Desktop:    968px+
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Node.js (v14 or higher)
+- npm or yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository
+```bash
+git clone https://github.com/Vanna-Gio/budget-dashboard.git
+cd budget-dashboard
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies
+```bash
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Start development server
+```bash
+npm start
+```
 
-## Learn More
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📂 Project Structure
+```
+src/
+├── components/
+│   ├── BudgetCard/          # Main card component
+│   │   ├── BudgetCard.jsx
+│   │   ├── BudgetCard.css
+│   │   └── index.js
+│   ├── LoadingSpinner/      # Loading state component
+│   └── EmptyState/          # Empty state component
+├── data/
+│   └── mockData.js          # Simulated API data
+├── App.js                   # Main application logic
+└── App.css                  # Global styles
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎨 Design Decisions
 
-### Code Splitting
+### Component Architecture
+- **Atomic Design** - Small, reusable components
+- **Single Responsibility** - Each component has one job
+- **Props-driven** - Data flows from parent to child
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Animation Strategy
+- **CSS Variables** - Dynamic animation delays scale infinitely
+- **Performance** - GPU-accelerated transforms (translateY)
+- **UX Focus** - Subtle animations enhance, don't distract
 
-### Analyzing the Bundle Size
+### Responsive Approach
+- **Desktop-first** - Started with 320px Figma design
+- **CSS Grid** - Auto-fit for flexible layouts
+- **Mobile optimization** - Touch-friendly buttons, readable text
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📸 Screenshots
 
-### Making a Progressive Web App
+### Desktop View
+![Desktop](./screenshots/desktop.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Mobile View
+![Mobile](./screenshots/mobile.png)
 
-### Advanced Configuration
+### Loading State
+![Loading](./screenshots/loading.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Empty State
+![Empty](./screenshots/empty.png)
 
-### Deployment
+## 🧪 What I Learned
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Technical Skills
+- Converting Figma design tokens (spacing, colors, typography) to CSS
+- Implementing CSS custom properties for dynamic animations
+- React Hooks: `useState`, `useEffect`
+- Array methods: `.map()`, `.filter()`
+- Conditional rendering patterns
+- PropTypes validation
 
-### `npm run build` fails to minify
+### Professional Practices
+- Conventional commit messages
+- Component extraction and refactoring
+- Barrel exports for clean imports
+- Separation of concerns (data, logic, UI)
+- Edge case handling (loading, empty, error states)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Design Principles
+- Mobile-first thinking (even with desktop-first implementation)
+- Accessibility considerations
+- Consistent spacing and visual hierarchy
+- Smooth micro-interactions
+
+## 🚧 Future Enhancements
+
+- [ ] Connect to real REST API
+- [ ] Add search functionality
+- [ ] Implement sorting options
+- [ ] Dark mode toggle
+- [ ] Export data to CSV/PDF
+- [ ] Unit tests with Jest/React Testing Library
+- [ ] Accessibility audit with axe-core
+- [ ] Performance optimization with React.memo
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👤 Author
+
+**Your Name**
+- GitHub: [@Vanna-Gio](https://github.com/Vanna-Gio)
+- LinkedIn: [Sovanna Ra](https://linkedin.com/in/sovanna-ra-866504347/)
+- Portfolio: [sovanna-portfolio.com](https://sovanna-portfolio.vercel.app/)
+
+## 🙏 Acknowledgments
+
+- Design inspiration from modern dashboard interfaces
+- Built for the General Department of Digital Economy job application
+- Project guidance and mentorship throughout development
+
+---
+
+⭐ If this project helped you learn React, please consider giving it a star!
